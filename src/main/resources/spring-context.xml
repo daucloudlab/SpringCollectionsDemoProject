@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="test" class="kz.kaznitu.lessons.CollectionDemo">
+              <property name="lists">
+                     <list>
+                            <value>1</value>
+                            <ref bean="person"/>
+                            <bean class="kz.kaznitu.lessons.Person">
+                                   <property name="name" value="Alia" />
+                                   <property name="address" value="Address 2" />
+                                   <property name="age" value="10" />
+                            </bean>
+                     </list>
+              </property>
+              <property name="sets">
+                     <set>
+                            <value>2</value>
+                            <ref bean="person"/>
+                            <bean class="kz.kaznitu.lessons.Person">
+                                   <property name="name" value="Alibek" />
+                                   <property name="address" value="Address 3" />
+                                   <property name="age" value="7" />
+                            </bean>
+                     </set>
+              </property>
+              <property name="maps">
+                     <map>
+                            <entry key="key 1" value="3" />
+                            <entry key="key 2" value-ref="person" />
+                            <entry key="key 3">
+                                   <bean class="kz.kaznitu.lessons.Person">
+                                          <property name="name" value="Ulan" />
+                                          <property name="address" value="Address 4" />
+                                          <property name="age" value="3" />
+                                   </bean>
+                            </entry>
+                     </map>
+              </property>
+              <property name="pros">
+                     <props>
+                            <prop key="admin">admin@gmail.com</prop>
+                            <prop key="support">support@gmail.com</prop>
+                     </props>
+              </property>
+       </bean>
+
+       <bean id="person" class="kz.kaznitu.lessons.Person">
+              <property name="name" value="Daulet"/>
+              <property name="address" value="Address 1" />
+              <property name="age" value="10"/>
+       </bean>
+</beans>
